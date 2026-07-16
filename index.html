@@ -1,129 +1,343 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tuin en Techniek Eyck</title>
 
-    <title>Tuin en Techniek Eyck</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    <style>
+body{
+    font-family:Segoe UI, Arial, sans-serif;
+    background:#f5f7fa;
+    color:#333;
+}
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+header{
+    background:#123B73;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+}
 
-        body{
-            font-family:'Segoe UI',sans-serif;
-            background:#f4f7fb;
-            color:#333;
-        }
+nav{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+}
 
-        header{
-            background:#123B73;
-            position:sticky;
-            top:0;
-            z-index:1000;
-            box-shadow:0 2px 10px rgba(0,0,0,0.15);
-        }
+.logo img{
+    height:80px;
+    width:auto;
+}
 
-        nav{
-            max-width:1400px;
-            margin:auto;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:15px 30px;
-        }
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
 
-        .logo img{
-            height:85px;
-            width:auto;
-            display:block;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+}
 
-        nav ul{
-            list-style:none;
-            display:flex;
-            gap:35px;
-        }
+nav a:hover{
+    color:#b7d6ff;
+}
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            font-weight:600;
-            font-size:17px;
-        }
+.hero{
+    display:grid;
+    grid-template-columns:45% 55%;
+    min-height:650px;
+}
 
-        nav a:hover{
-            color:#A9D4FF;
-        }
+.hero-left{
+    background:linear-gradient(135deg,#123B73,#1E62B3);
+    color:white;
+    padding:80px 60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
 
-        .hero{
-            display:grid;
-            grid-template-columns:45% 55%;
-            min-height:700px;
-        }
+.hero-left h1{
+    font-size:55px;
+    margin-bottom:25px;
+}
 
-        .hero-left{
-            background:linear-gradient(135deg,#123B73,#1E62B3);
-            color:white;
-            padding:90px 60px;
-            clip-path:polygon(0 0,92% 0,100% 50%,92% 100%,0 100%);
-            z-index:2;
-        }
+.hero-left p{
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:20px;
+}
 
-        .hero-left h1{
-            font-size:55px;
-            margin-bottom:30px;
-        }
+.hero-right{
+    background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1800');
+    background-size:cover;
+    background-position:center;
+}
 
-        .hero-left p{
-            font-size:21px;
-            line-height:1.8;
-            margin-bottom:20px;
-        }
+.button{
+    display:inline-block;
+    padding:15px 30px;
+    background:white;
+    color:#123B73;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:6px;
+    margin-top:10px;
+}
 
-        .hero-right{
-            background-image:
-            linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15)),
-            url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1800');
-            background-size:cover;
-            background-position:center;
-        }
+.section{
+    padding:80px 10%;
+}
 
-        .btn{
-            display:inline-block;
-            background:white;
-            color:#123B73;
-            text-decoration:none;
-            padding:15px 30px;
-            border-radius:6px;
-            font-weight:bold;
-            margin-top:20px;
-        }
+.section h2{
+    font-size:40px;
+    margin-bottom:30px;
+    color:#123B73;
+}
 
-        .section{
-            padding:90px 10%;
-        }
+.diensten-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
 
-        .section h2{
-            font-size:42px;
-            margin-bottom:30px;
-        }
+.dienst{
+    background:white;
+    border-left:5px solid #1E62B3;
+    padding:25px;
+    border-radius:8px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
 
-        .diensten{
-            background:white;
-        }
+.dienst h3{
+    color:#123B73;
+    margin-bottom:10px;
+}
 
-        .diensten-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:25px;
-        }
+.over{
+    background:#1E62B3;
+    color:white;
+}
 
-        .dienst{
-            background:#EDF4FD;
-            border-left:6px solid #1E62B3;
-            padding:30px;
+.over h2{
+    color:white;
+}
+
+.over p{
+    max-width:900px;
+    line-height:1.9;
+}
+
+.contact{
+    background:#123B73;
+    color:white;
+}
+
+.contact h2{
+    color:white;
+}
+
+.contact-box{
+    background:rgba(255,255,255,0.08);
+    padding:30px;
+    border-radius:10px;
+    max-width:700px;
+}
+
+.contact-box p{
+    margin-bottom:15px;
+}
+
+footer{
+    background:#082144;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+@media(max-width:900px){
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .hero-left{
+        padding:50px 30px;
+    }
+
+    .hero-left h1{
+        font-size:38px;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .logo img{
+        height:65px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+    <img src="logo.png" alt="Tuin en Techniek Eyck">
+</div>
+
+<ul>
+Over Tuin en Techniek Eyck</a></li>
+    <li>#contactContact</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-left">
+
+<h1>Vakmanschap voor iedere tuin</h1>
+
+<p>
+Tuin en Techniek Eyck helpt particulieren bij het realiseren van schuttingen, terrassen, bestratingen en vlonders.
+</p>
+
+<p>
+Iedere tuin is anders. Daarom kijken wij graag samen met u ter plaatse naar de mogelijkheden om tot een passende oplossing te komen.
+</p>
+
+#contact
+Vraag vrijblijvend een offerte aan
+</a>
+
+</div>
+
+<div class="hero-right"></div>
+
+</section>
+
+<section class="section">
+
+<h2>Onze diensten</h2>
+
+<div class="diensten-grid">
+
+<div class="dienst">
+<h3>Schuttingen</h3>
+<p>Plaatsing van houten, betonnen en composiet schuttingen.</p>
+</div>
+
+<div class="dienst">
+<h3>Terrassen</h3>
+<p>Aanleg van terrassen passend bij uw woning en tuin.</p>
+</div>
+
+<div class="dienst">
+<h3>Bestrating</h3>
+<p>Van tuinpaden tot complete bestrating rondom uw woning.</p>
+</div>
+
+<div class="dienst">
+<h3>Vlonders</h3>
+<p>Houten en composiet vlonders met een moderne uitstraling.</p>
+</div>
+
+</div>
+
+<br><br>
+
+<p>
+Iedere tuin is uniek. Daarom bekijken wij graag samen met u op locatie welke mogelijkheden het beste aansluiten bij uw wensen.
+</p>
+
+</section>
+
+<section class="section over" id="over">
+
+<h2>Over Tuin en Techniek Eyck</h2>
+
+<p>
+Tuin en Techniek Eyck is officieel opgericht in 2025, maar beschikt over jarenlange praktijkervaring.
+<br><br>
+Achter de onderneming staat Toine Eyck, een gedreven vakman met een passie voor kwaliteit, betrouwbaarheid en klanttevredenheid. Na zijn opleiding binnen het Belgische onderwijs heeft hij zijn Nederlandse diploma behaald en zijn kennis verder ontwikkeld in de praktijk.
+<br><br>
+Persoonlijke aandacht, duidelijke communicatie en vakmanschap staan centraal binnen iedere opdracht. Of het nu gaat om een nieuwe schutting, terras, bestrating of vlonder, het doel blijft hetzelfde: een resultaat opleveren waar de klant jarenlang plezier van heeft.
+</p>
+
+</section>
+
+<section class="section contact" id="contact">
+
+<h2>Contact</h2>
+
+<div class="contact-box">
+
+<p><strong>Tuin en Techniek Eyck</strong></p>
+
+<p>📧 tuinentechniekeyck@gmail.com</p>
+
+<p>📞 06-26262626</p>
+
+<p>
+Heeft u plannen voor een nieuwe schutting, terras, bestrating of vlonder?
+Neem vrijblijvend contact op.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Tuin en Techniek Eyck
+</footer>
+
+https://wa.me/31626262626
+💬
+</a>
+
+</body>
+</html>
