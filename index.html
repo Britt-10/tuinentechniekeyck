@@ -3,219 +3,261 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Tuin en Techniek Eyck</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    color:#333;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
+header{
+    background:#1b5e20;
+    color:white;
+    padding:20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-header {
-    background: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #ddd;
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1200px;
+    margin:auto;
 }
 
-nav {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
+.hero{
+    height:80vh;
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1500&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+.hero-content{
+    max-width:700px;
 }
 
-.hero {
-    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
-                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 120px 20px;
+.hero h1{
+    font-size:55px;
 }
 
-.hero h1 {
-    font-size: 3rem;
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 30px;
+    background:#43a047;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
 }
 
-.hero p {
-    margin: 20px 0;
-    font-size: 1.2rem;
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 20px;
 }
 
-.button {
-    display: inline-block;
-    background: #2e7d32;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 8px;
+h2{
+    text-align:center;
+    margin-bottom:40px;
 }
 
-section {
-    max-width: 1200px;
-    margin: auto;
-    padding: 70px 20px;
+.diensten{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 40px;
+.card{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
-.diensten {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 25px;
+.projecten{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
 }
 
-.card {
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 25px;
-    background: white;
+.projecten img{
+    width:100%;
+    border-radius:10px;
+    height:250px;
+    object-fit:cover;
 }
 
-.over {
-    background: #f5f5f5;
-    text-align: center;
-    max-width: 100%;
+.over{
+    background:#f5f5f5;
 }
 
-.contact {
-    text-align: center;
+.contact{
+    text-align:center;
 }
 
-.contact-box {
-    display: inline-block;
-    background: white;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 
-footer {
-    background: #2e7d32;
-    color: white;
-    text-align: center;
-    padding: 25px;
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
 }
 
-.whatsapp {
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
-    background: #25D366;
-    color: white;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 65px;
-    font-size: 30px;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,.25);
-}
 </style>
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <h2>Tuin en Techniek Eyck</h2>
-        <ul>
-            <li><a href="#diensten/a></li>
-            <li>#overOver ons</a></li>
-            <li>#contactContact</a></li>
-        </ul>
-    </nav>
+<nav>
+<h2>Tuin en Techniek Eyck</h2>
+
+<div>
+<a hrefenDiensten</a>
+<a href="#projecten">Projecten</a>
+ns</a>
+<a hreftContact</a>
+</div>
+</nav>
 </header>
 
 <section class="hero">
-    <h1>Vakwerk voor iedere tuin</h1>
-    <p>Specialist in schuttingen, tuinhuisjes, terrassen, vlonders en bestrating.</p>
-    #contactVraag een offerte aan</a>
+
+<div class="hero-content">
+<h1>Vakwerk voor uw tuin</h1>
+
+<p>
+Specialist in schuttingen, tuinhuisjes,
+terrassen, bestrating en vlonders.
+</p>
+
+#contact
+Vraag vrijblijvend een offerte aan
+</a>
+
+</div>
+
 </section>
 
-<section id="diensten">
-    <h2>Onze Diensten</h2>
+<section class="container" id="diensten">
 
-    <div class="diensten">
+<h2>Onze Diensten</h2>
 
-        <div class="card">
-            <h3>Schuttingen</h3>
-            <p>Plaatsing van houten, betonnen en composiet schuttingen.</p>
-        </div>
+<div class="diensten">
 
-        <div class="card">
-            <h3>Tuinhuisjes</h3>
-            <p>Montage van tuinhuisjes, overkappingen en bergingen.</p>
-        </div>
+<div class="card">
+<h3>Schuttingen</h3>
+<p>Houten, composiet en betonnen schuttingen professioneel geplaatst.</p>
+</div>
 
-        <div class="card">
-            <h3>Terrassen & Bestrating</h3>
-            <p>Professionele aanleg van terrassen en bestrating.</p>
-        </div>
+<div class="card">
+<h3>Tuinhuisjes</h3>
+<p>Complete montage van tuinhuisjes, bergingen en overkappingen.</p>
+</div>
 
-        <div class="card">
-            <h3>Vlonders</h3>
-            <p>Houten en composiet vlonders op maat.</p>
-        </div>
+<div class="card">
+<h3>Terrassen</h3>
+<p>Aanleg van terrassen in tegels, klinkers en natuursteen.</p>
+</div>
 
-    </div>
+<div class="card">
+<h3>Vlonders</h3>
+<p>Moderne houten en composiet vlonders op maat.</p>
+</div>
+
+</div>
+
 </section>
 
-<section id="over" class="over">
-    <h2>Over Tuin en Techniek Eyck</h2>
-    <p>
-        Wij realiseren duurzame en hoogwaardige tuinprojecten voor particulieren en bedrijven.
-        Van een eenvoudige schutting tot een complete tuinrenovatie.
-    </p>
+<section class="container" id="projecten">
+
+<h2>Projecten</h2>
+
+<div class="projecten">
+
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747efat&fit=crop&w=900&q=80
+
+<img src="https://images.unsplash.com/photo-1585320806297-9794uto=format&fit=crop&w=900&q=80
+
+<img src="https://images.unsplash.com/photo-1598902108854-10e335adacrmat&fit=crop&w=900&q=80
+
+</div>
+
 </section>
 
-<section id="contact" class="contact">
-    <h2>Contact</h2>
+<section class="container over" id="over">
 
-    <div class="contact-box">
-        <h3>Tuin en Techniek Eyck</h3>
-        <p>📞 06-12345678</p>
-        <p>📧 info@tuinentechniekeyck.nl</p>
-    </div>
+<h2>Over Tuin en Techniek Eyck</h2>
+
+<p style="text-align:center;max-width:800px;margin:auto;">
+Wij realiseren duurzame en kwalitatieve tuinprojecten voor particulieren
+en bedrijven. Betrouwbaar vakwerk, duidelijke communicatie en een
+hoogwaardige afwerking staan daarbij centraal.
+</p>
+
+</section>
+
+<section class="container contact" id="contact">
+
+<h2>Contact</h2>
+
+<p><strong>Tuin en Techniek Eyck</strong></p>
+
+<p>📞 06-12345678</p>
+
+<p>📧 info@tuinentechniekeyck.nl</p>
+
+<p>Vraag vrijblijvend een offerte aan via telefoon, e-mail of WhatsApp.</p>
 
 </section>
 
 <footer>
-    © 2026 Tuin en Techniek Eyck - Alle rechten voorbehouden
+
+© 2026 Tuin en Techniek Eyck
+
 </footer>
 
 <a class="whatsapp"
-   href="https://wa.me/31612345678"
-   target="_blank">
-   💬
+href="https://wa.me/31612345678"
+target="_blank">
+
+💬
+
 </a>
 
 </body>
