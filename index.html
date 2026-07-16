@@ -1,369 +1,129 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Tuin en Techniek Eyck</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Segoe UI',sans-serif;
-background:#f4f7fb;
-color:#333;
-}
-
-/* NAVIGATIE */
-
-header{
-background:#123B73;
-pos*tion:sticky;
-top**;
-z-index:1000;
-box-shadow:0 2px 1*px rgba(0,0,0,.15);
-}
-
-nav{
-max-wi*th:1400px;
-margin:auto;
-display:fl*x;
-justify-content:space-between;
-*lign-items:center;
-padding:15px 30*x;
-}
-
-.logo img {
-    height: 90px;
-    width: auto;
-    display: block;
-}
-
-n*v ul{
-display:flex;
-list-style:non*;
-gap:40px;
-}
-
-nav a{
-color:white;*text-decoration:none;
-font-weight:*00;
-font-size:17px;
-}
-
-/* HERO */
-
-.hero{
-display:grid;
-grid-template-columns:45% 55%;
-min-height:700px;
-}
-
-.hero-left{
-background:linear-gradient(135deg,#123B73,#1E62B3);
-padding:90px 60px;
-color:white;
-clip-path:polygon(0 0,92% 0,100% 50%,92% 100%,0 100%);
-z-index:5;
-}
-
-.hero-left h1{
-font-size:60px;
-margin-bottom:30px;
-}
-
-.hero-left p{
-font-size:22px;
-line-height:1.8;
-margin-bottom:20px;
-}
-
-.hero-right{
-background-image:
-linear-gradient(rgba(0,0,0,.15),
-rgba(0,0,0,.15)),
-url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1800');
-
-background-size:cover;
-background-position:center;
-}
-
-.cta{
-display:inline-block;
-background:white;
-color:#123B73;
-padding:15px 30px;
-border-radius:6px;
-text-decoration:none;
-font-weight:bold;
-margin-top:20px;
-}
-
-/* SECTIES */
-
-.section{
-padding:90px 10%;
-}
-
-.section h2{
-font-size:45px;
-margin-bottom:40px;
-}
-
-/* DIENSTEN */
-
-.diensten{
-background:white;
-}
-
-.diensten-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.dienst{
-background:#eef4fd;
-padding:30px;
-border-left:6px solid #1E62B3;
-border-radius:6px;
-}
-
-.dienst h3{
-margin-bottom:15px;
-color:#123B73;
-}
-
-/* OVER */
-
-.over{
-background:#1E62B3;
-color:white;
-}
-
-.over p{
-font-size:19px;
-line-height:1.9;
-max-width:900px;
-}
-
-/* CONTACT */
-
-.contact{
-background:#123B73;
-color:white;
-}
-
-.contact-box{
-background:rgba(255,255,255,.08);
-padding:35px;
-border-radius:10px;
-max-width:700px;
-}
-
-.contact p{
-margin-bottom:15px;
-font-size:18px;
-}
-
-/* FOOTER */
-
-footer{
-background:#082144;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-position:fixed;
-right:25px;
-bottom:25px;
-width:70px;
-height:70px;
-background:#25D366;
-color:white;
-text-decoration:none;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:35px;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
-}
-
-/* MOBIEL */
-
-@media(max-width:900px){
-
-.hero{
-grid-template-columns:1fr;
-}
-
-.hero-left{
-clip-path:none;
-padding:60px 30px;
-}
-
-.hero-left h1{
-font-size:38px;
-}
-
-nav{
-flex-direction:column;
-gap:20px;
-}
-
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-}
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-
-<nav>
-
-<div class="logo">
-    <img src="logo.png" alt="Tuin en Techniek Eyck Logo">
-</div>
-
-<ul>in en Techniek Eyck</a></li>
-<li>#contactContact</a></li>
-</ul>
-
-</nav>
-
-</header>
-
-<section class="hero" id="home">
-
-<div class="hero-left">
-
-<h1>Vakmanschap voor iedere tuin</h1>
-
-<p>
-Tuin en Techniek Eyck helpt particulieren bij het realiseren van
-schuttingen, terrassen, bestratingen en vlonders.
-</p>
-
-<p>
-Iedere tuin is anders. Daarom kijken wij graag samen met u naar de mogelijkheden op locatie om tot een passende oplossing te komen.
-</p>
-
-#contact
-Vraag vrijblijvend een offerte aan
-</a>
-
-</div>
-
-<div class="hero-right"></div>
-
-</section>
-
-<section class="section diensten">
-
-<h2>Onze diensten</h2>
-
-<div class="diensten-grid">
-
-<div class="dienst">
-<h3>Schuttingen</h3>
-<p>Plaatsing van houten, betonnen en composiet schuttingen.</p>
-</div>
-
-<div class="dienst">
-<h3>Terrassen</h3>
-<p>Aanleg van terrassen passend bij uw woning en tuin.</p>
-</div>
-
-<div class="dienst">
-<h3>Bestrating</h3>
-<p>Van tuinpaden tot complete bestrating rondom uw woning.</p>
-</div>
-
-<div class="dienst">
-<h3>Vlonders</h3>
-<p>Moderne houten en composiet vlonders op maat.</p>
-</div>
-
-</div>
-
-<br><br>
-
-<p style="font-size:18px;color:#666;">
-Iedere tuin is uniek. Daarom bekijken wij graag ter plaatse welke mogelijkheden het beste passen bij uw wensen en situatie.
-</p>
-
-</section>
-
-<section class="section over" id="over">
-
-<h2>Over Tuin en Techniek Eyck</h2>
-
-<p>
-
-Tuin en Techniek Eyck is officieel opgericht in 2025, maar beschikt over jarenlange praktijkervaring.
-
-<br><br>
-
-Achter de onderneming staat Toine Eyck, een gedreven vakman met een passie voor kwaliteit, betrouwbaarheid en klanttevredenheid. Na zijn opleiding binnen het Belgische onderwijs heeft hij ook zijn Nederlandse diploma behaald en zijn kennis verder ontwikkeld in de praktijk.
-
-<br><br>
-
-Persoonlijke aandacht, duidelijke communicatie en vakmanschap staan centraal binnen iedere opdracht. Of het nu gaat om een nieuwe schutting, terras, bestrating of vlonder, het doel blijft hetzelfde: een resultaat opleveren waar de klant jarenlang plezier van heeft.
-
-</p>
-
-</section>
-
-<section class="section contact" id="contact">
-
-<h2>Contact</h2>
-
-<div class="contact-box">
-
-<p><strong>Tuin en Techniek Eyck</strong></p>
-
-<p>📧 tuinentechniekeyck@gmail.com</p>
-
-<p>📞 06-26262626</p>
-
-<p>
-Heeft u plannen voor een nieuwe tuin, schutting,
-terras, vlonder of bestrating?
-Neem vrijblijvend contact op.
-</p>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 Tuin en Techniek Eyck
-
-</footer>
-
-<a class="whatsapp"
-62626
-💬
-</a>
-
-</body>
-</html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tuin en Techniek Eyck</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Segoe UI',sans-serif;
+            background:#f4f7fb;
+            color:#333;
+        }
+
+        header{
+            background:#123B73;
+            position:sticky;
+            top:0;
+            z-index:1000;
+            box-shadow:0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        nav{
+            max-width:1400px;
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 30px;
+        }
+
+        .logo img{
+            height:85px;
+            width:auto;
+            display:block;
+        }
+
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:35px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:600;
+            font-size:17px;
+        }
+
+        nav a:hover{
+            color:#A9D4FF;
+        }
+
+        .hero{
+            display:grid;
+            grid-template-columns:45% 55%;
+            min-height:700px;
+        }
+
+        .hero-left{
+            background:linear-gradient(135deg,#123B73,#1E62B3);
+            color:white;
+            padding:90px 60px;
+            clip-path:polygon(0 0,92% 0,100% 50%,92% 100%,0 100%);
+            z-index:2;
+        }
+
+        .hero-left h1{
+            font-size:55px;
+            margin-bottom:30px;
+        }
+
+        .hero-left p{
+            font-size:21px;
+            line-height:1.8;
+            margin-bottom:20px;
+        }
+
+        .hero-right{
+            background-image:
+            linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15)),
+            url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1800');
+            background-size:cover;
+            background-position:center;
+        }
+
+        .btn{
+            display:inline-block;
+            background:white;
+            color:#123B73;
+            text-decoration:none;
+            padding:15px 30px;
+            border-radius:6px;
+            font-weight:bold;
+            margin-top:20px;
+        }
+
+        .section{
+            padding:90px 10%;
+        }
+
+        .section h2{
+            font-size:42px;
+            margin-bottom:30px;
+        }
+
+        .diensten{
+            background:white;
+        }
+
+        .diensten-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+        }
+
+        .dienst{
+            background:#EDF4FD;
+            border-left:6px solid #1E62B3;
+            padding:30px;
