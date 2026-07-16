@@ -3,16 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tuin en Techniek Eyck verzorgt schuttingen, terrassen, bestratingen, vlonders en tuinrenovaties in Limburg. Vraag vrijblijvend een offerte aan.">
-
-<meta name="keywords" content="schutting plaatsen Maastricht, terras aanleggen Maastricht, bestrating Limburg, tuinrenovatie Limburg, vlonder bouwen, Tuin en Techniek Eyck">
-
-<meta name="author" content="Tuin en Techniek Eyck">
-  <meta property="og:title" content="Tuin en Techniek Eyck">
-<meta property="og:description" content="Schuttingen, terrassen, bestrating en tuinrenovaties in Limburg.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="Logo.png">
-``
   <title>Tuin en Techniek Eyck</title>
   <style>
     :root {
@@ -40,23 +30,15 @@
       background: var(--grey);
       color: var(--text);
       line-height: 1.6;
-      padding-top: 170px; 
     }
 
     header {
       background: var(--white);
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
       z-index: 1000;
       box-shadow: 0 2px 14px rgba(18, 59, 115, 0.12);
-      transition: transform 0.3s ease;
     }
-
-  header.hide {
-    transform: translateY(-100%);
-  }
 
     .navbar {
       max-width: 1250px;
@@ -368,16 +350,6 @@
       }
     }
 
-    .menu-toggle {
-  display: none;
-  background: var(--blue);
-  color: white;
-  border: none;
-  padding: 12px 18px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
     @media (max-width: 700px) {
       .navbar {
         flex-direction: column;
@@ -385,19 +357,10 @@
       }
 
       .menu {
-  display: none;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 15px;
-}
-
-.menu.active {
-  display: flex;
-}
-
-.menu-toggle {
-  display: block;
-}
+        flex-direction: column;
+        gap: 14px;
+        align-items: flex-start;
+      }
 
       .logo-link img {
         height: 62px;
@@ -428,10 +391,6 @@
       </a>
 
       <ul class="menu">
-        <button class="menu-toggle">
-☰ Menu
-</button>
-``
         <li><a href="#home">Home</a></li>
         <li><a href="#over">Over Tuin en Techniek Eyck</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -523,8 +482,7 @@
           <p><strong>E-mail:</strong> <a href="mailto:tuinentechniekeyck@gmail.com">tuinentechniekeyck@gmail.com</a></p>
           <p><strong>Telefoon:</strong> <a href="tel:+31683187642">06-83187642</a></p>
           <p><strong>WhatsApp:</strong> <a href="https://wa.me/31626262626" target="_blank" rel="noopener noreferrer">Stuur direct een bericht</a></p>
-          <a href="https://www.k777165
-</a>
+          <p><strong>KVK:</strong> <a href="98777165">98777165</a></p>
           <p>
             Heeft u plannen voor een nieuwe schutting, terras, bestrating of wilt u uw tuin rennoveren?
             Neem vrijblijvend contact op voor een kennismaking of offerte.
@@ -537,24 +495,14 @@
   </main>
 
   <footer>
-    © 2026 Tuin en Techniek Eyck
-
-KVK: 98777165
-Maastricht, Limburg
+    &copy; 2026 Tuin en Techniek Eyck - Alle rechten voorbehouden
   </footer>
 
-  <a class="whatsapp" href="https://wa.me/31626262626" target="_blank" rel="noopener noreferrer">
-  💬
-</a>
-
-<script>
-const toggleButton = document.querySelector(".menu-toggle");
-const menu = document.querySelector(".menu");
-
-toggleButton.addEventListener("click", () => {
-    menu.classList.toggle("active");
-});
-</script>
-
+  <a class="whatsapp" href="https://wa.me/31626262626" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Tuin en Techniek Eyck">
+    💬
+  </a>
 </body>
 </html>
+
+Copilot said:
+
