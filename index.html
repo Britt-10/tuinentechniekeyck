@@ -30,15 +30,23 @@
       background: var(--grey);
       color: var(--text);
       line-height: 1.6;
+      padding-top: 170px; 
     }
 
     header {
       background: var(--white);
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 100%;
       z-index: 1000;
       box-shadow: 0 2px 14px rgba(18, 59, 115, 0.12);
+      transition: transform 0.3s ease;
     }
+
+  header.hide {
+    transform: translateY(-100%);
+  }
 
     .navbar {
       max-width: 1250px;
@@ -501,5 +509,25 @@
   <a class="whatsapp" href="https://wa.me/31626262626" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Tuin en Techniek Eyck">
     💬
   </a>
+
+  <script>
+    let lastScrollTop = 0;
+    const header = document.querySelector("header");
+
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop && scrollTop > 100) {
+    // naar beneden scrollen
+    header.classList.add("hide");
+  } else {
+    // naar boven scrollen
+    header.classList.remove("hide");
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
+</script>
+
 </body>
 </html>
