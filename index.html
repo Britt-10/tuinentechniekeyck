@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuin en Techniek Eyck</title>
+  <style>
+    :root {
+      --dark-blue: #123B73;
+      --blue: #1E62B3;
+      --light-blue: #EAF3FF;
+      --accent-blue: #7DB7F0;
+      --white: #ffffff;
+      --text: #243044;
+      --grey: #F5F7FA;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--grey);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 14px rgba(18, 59, 115, 0.12);
+    }
+
+    .navbar {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-link img {
+      height: 72px;
+      width: auto;
+      display: block;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .menu a {
+      color: var(--dark-blue);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .menu a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      min-height: 680px;
+      display: grid;
+      grid-template-columns: 47% 53%;
+      background: var(--dark-blue);
+      overflow: hidden;
+    }
+
+    .hero-text {
+      background: linear-gradient(135deg, var(--dark-blue), var(--blue));
+      color: var(--white);
+      padding: 90px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%);
+      z-index: 2;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(40px, 5vw, 68px);
+      line-height: 1.05;
+      margin-bottom: 28px;
+      letter-spacing: -1px;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      max-width: 620px;
+      margin-bottom: 20px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .button-primary,
+    .button-secondary {
+      display: inline-block;
+      padding: 15px 26px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--white);
+      color: var(--dark-blue);
+    }
+
+    .button-primary:hover {
+      background: var(--light-blue);
+    }
+
+    .button-secondary {
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+
+    .button-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-image {
+      background-image: linear-gradient(rgba(18, 59, 115, 0.12), rgba(18, 59, 115, 0.12)), url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1800&auto=format&fit=crop");
+      background-size: cover;
+      background-position: center;
+      min-height: 680px;
+    }
+
+    .section {
+      padding: 90px 8%;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      color: var(--dark-blue);
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+
+    .section-intro {
+      max-width: 850px;
+      font-size: 18px;
+      margin-bottom: 42px;
+      color: #4b5871;
+    }
+
+    .services {
+      background: var(--white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--light-blue);
+      border-left: 6px solid var(--blue);
+      padding: 30px 26px;
+      min-height: 190px;
+      box-shadow: 0 6px 18px rgba(18, 59, 115, 0.08);
+    }
+
+    .service-card h3 {
+      color: var(--dark-blue);
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #41506c;
+    }
+
+    .custom-note {
+      margin-top: 38px;
+      padding: 26px 30px;
+      background: #F7FAFF;
+      border-left: 6px solid var(--accent-blue);
+      font-size: 18px;
+      color: #32405a;
+    }
+
+    .about {
+      background: linear-gradient(135deg, var(--blue), var(--dark-blue));
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about::after {
+      content: "";
+      position: absolute;
+      right: -150px;
+      top: 0;
+      width: 420px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      transform: skewX(-18deg);
+    }
+
+    .about .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about .section-title {
+      color: var(--white);
+    }
+
+    .about p {
+      max-width: 900px;
+      font-size: 19px;
+      margin-bottom: 18px;
+    }
+
+    .choice-blocks {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .choice-block {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      font-weight: 700;
+    }
+
+    .contact {
+      background: #F5F7FA;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      background: var(--white);
+      padding: 42px;
+      box-shadow: 0 8px 24px rgba(18, 59, 115, 0.10);
+      border-top: 8px solid var(--blue);
+    }
+
+    .contact-card h3 {
+      color: var(--dark-blue);
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .contact-card p {
+      margin-bottom: 14px;
+      font-size: 18px;
+    }
+
+    .contact-card a {
+      color: var(--dark-blue);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .contact-visual {
+      background: linear-gradient(rgba(18, 59, 115, 0.18), rgba(18, 59, 115, 0.18)), url("https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1500&auto=format&fit=crop");
+      background-size: cover;
+      background-position: center;
+      min-height: 340px;
+    }
+
+    footer {
+      background: #082144;
+      color: var(--white);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 15px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: #25D366;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 31px;
+      box-shadow: 0 7px 18px rgba(0, 0, 0, 0.28);
+      z-index: 999;
+    }
+
+    @media (max-width: 1000px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text {
+        clip-path: none;
+        padding: 70px 34px;
+      }
+
+      .hero-image {
+        min-height: 360px;
+      }
+
+      .services-grid,
+      .choice-blocks,
+      .contact-layout {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu {
+        flex-direction: column;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .logo-link img {
+        height: 62px;
+      }
+
+      .services-grid,
+      .choice-blocks,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 62px 24px;
+      }
+
+      .contact-card {
+        padding: 30px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="#home" class="logo-link" aria-label="Naar home">
+        <img src="Logo.png" alt="Tuin en Techniek Eyck logo" />
+      </a>
+
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#over">Over Tuin en Techniek Eyck</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>Vakmanschap voor iedere tuin</h1>
+        <p>
+          Tuin en Techniek Eyck helpt particulieren bij het realiseren van schuttingen,
+          terrassen, bestratingen en vlonders.
+        </p>
+        <p>
+          Iedere tuin is anders. Daarom kijken wij graag samen met u ter plaatse naar
+          de mogelijkheden om tot een passende oplossing te komen.
+        </p>
+        <div class="hero-buttons">
+          <a class="button-primary" href="#contact">Vraag vrijblijvend een offerte aan</a>
+          <a class="button-secondary" href="https://wa.me/31626262626" target="_blank" rel="noopener noreferrer">WhatsApp direct</a>
+        </div>
+      </div>
+      <div class="hero-image" aria-label="Tuinproject met groen en buitenruimte"></div>
+    </section>
+
+    <section class="section services" id="diensten">
+      <div class="container">
+        <h2 class="section-title">Onze diensten</h2>
+        <p class="section-intro">
+          Wij denken praktisch mee en werken met aandacht voor kwaliteit, afwerking en
+          duurzaamheid. De uitvoering wordt afgestemd op de situatie ter plaatse.
+        </p>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Schuttingen</h3>
+            <p>Plaatsing van houten, betonnen en composiet schuttingen voor privacy en een verzorgde uitstraling.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Terrassen</h3>
+            <p>Aanleg van terrassen die passen bij de woning, tuin en gewenste uitstraling.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Bestratingen</h3>
+            <p>Van tuinpaden tot complete bestrating rondom woning, oprit of buitenruimte.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Vlonders</h3>
+            <p>Houten en composiet vlonders voor een nette, moderne en praktische buitenruimte.</p>
+          </article>
+        </div>
+
+        <div class="custom-note">
+          Niet iedere tuin past binnen een standaard oplossing. Daarom bekijkt Tuin en Techniek Eyck graag ter plaatse welke mogelijkheden het beste aansluiten bij uw wensen, situatie en budget.
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="over">
+      <div class="container">
+        <h2 class="section-title">Over Tuin en Techniek Eyck</h2>
+        <p>
+          Tuin en Techniek Eyck is officieel opgericht in 2025, maar beschikt over jarenlange praktijkervaring.
+        </p>
+        <p>
+          Achter de onderneming staat Toine Eyck, een gedreven vakman met een passie voor kwaliteit,
+          betrouwbaarheid en klanttevredenheid. Na zijn opleiding binnen het Belgische onderwijs heeft
+          Toine ook zijn Nederlandse diploma behaald en zijn kennis verder ontwikkeld in de praktijk.
+        </p>
+        <p>
+          Persoonlijke aandacht, duidelijke communicatie en vakmanschap staan centraal binnen iedere opdracht.
+          Of het nu gaat om een nieuwe schutting, terras, bestrating of vlonder: het doel blijft hetzelfde,
+          namelijk een resultaat opleveren waar de klant jarenlang plezier van heeft.
+        </p>
+
+        <div class="choice-blocks">
+          <div class="choice-block">Persoonlijk contact</div>
+          <div class="choice-block">Kwalitatieve afwerking</div>
+          <div class="choice-block">Oplossingen op maat</div>
+          <div class="choice-block">Klanttevredenheid centraal</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-layout">
+        <div class="contact-card">
+          <h2 class="section-title">Contact</h2>
+          <h3>Tuin en Techniek Eyck</h3>
+          <p><strong>E-mail:</strong> <a href="mailto:tuinentechniekeyck@gmail.com">tuinentechniekeyck@gmail.com</a></p>
+          <p><strong>Telefoon:</strong> <a href="tel:+31626262626">06-26262626</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/31626262626" target="_blank" rel="noopener noreferrer">Stuur direct een bericht</a></p>
+          <p>
+            Heeft u plannen voor een nieuwe schutting, terras, bestrating of vlonder?
+            Neem vrijblijvend contact op voor een kennismaking of offerte.
+          </p>
+        </div>
+
+        <div class="contact-visual" aria-label="Voorbeeld van tuin en buitenruimte"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Tuin en Techniek Eyck - Alle rechten voorbehouden
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/31626262626" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Tuin en Techniek Eyck">
+    💬
+  </a>
+</body>
+</html>
