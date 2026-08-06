@@ -82,7 +82,7 @@
     .hero {
       min-height: 680px;
       display: grid;
-      grid-template-columns: 15% 35% 50%;
+      grid-template-columns: 20% 35% 45%;
       background: var(--dark-blue);
       overflow: hidden;
     }
@@ -152,6 +152,18 @@
       background-repeat: no-repeat;
       background-position: 70% 70%;
       min-height: 680px;
+    }
+
+    .hero-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--dark-blue);
+    }
+
+    .hero-logo img {
+      width: 180px'
+      height: auto;
     }
 
     .section {
@@ -386,15 +398,13 @@
 <body>
   <header>
     <nav class="navbar">
-      <a href="#home" class="logo-link" aria-label="Naar home">
-        <img src="Logo.png" alt="Tuin en Techniek Eyck logo" />
-      </a>
-
+      
       <ul class="menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#over">Over Tuin en Techniek Eyck</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      
     </nav>
   </header>
 
@@ -402,7 +412,7 @@
    <section class="hero" id="home">
 
        <div class="hero-logo">
-           <ogo.png
+           <img src="Logo.png" alt="Logo">
              </div>
 
         <div class="hero-text">
