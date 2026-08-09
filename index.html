@@ -231,7 +231,7 @@
       overflow: hidden;
     }
 
-    .about::after {
+    .about:after {
       content: "";
       position: absolute;
       right: -150px;
@@ -247,13 +247,27 @@
       z-index: 1;
     }
 
-    
+    .about-photo {
+      position: absolute;
+      top: 40px;
+      right: 60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%
+      background-image: url("KvK Toine.png");
+      background-size: cover;
+      background-position: center;
+      border: 6px solid white;
+      box-schadow: 0 10px 25px rgba (o,0,0,0.25);
+      z-index: 2;
+    }
+
     .about .section-title {
       color: var(--white);
     }
 
     .about p {
-      max-width: 900px;
+      max-width: 700px;
       font-size: 19px;
       margin-bottom: 18px;
     }
@@ -439,6 +453,9 @@
 
     <section class="section services" id="diensten">
       <div class="container">
+        
+        <div class="about-photo"></div>div>
+        
         <h2 class="section-title">Onze diensten</h2>
         <p class="section-intro">
           Wij denken praktisch mee en werken met aandacht voor kwaliteit, afwerking en
