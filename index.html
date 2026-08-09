@@ -381,10 +381,46 @@
         align-items: flex-start;
       }
 
+      header {
+        position: static;
+      }
+      
       .menu {
+        display: none;
+      }
+
+      .about-photo {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 180px;
+        margin: 0 auto 30px auto;
+        display: block;
+      }
+
+      .hero-image {
+        width: 100%;
+        max-widht: 350px;
+        height: 300px;
+      }
+
+      .hero-text h1 {
+        front-size: 32px;
+      }
+
+      .hero-text p,
+      .about p,
+      .contact-card p {
+        font-size: 16PX;
+      }
+
+      .hero-buttons {
         flex-direction: column;
-        gap: 14px;
-        align-items: flex-start;
+      }
+
+      .button-primary,
+      .button-secondary {
+        text-align: center;
       }
 
       .services-grid,
@@ -401,6 +437,7 @@
         padding: 30px 24px;
       }
     }
+    
   </style>
 </head>
 
