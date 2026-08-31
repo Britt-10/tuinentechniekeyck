@@ -71,7 +71,7 @@
     .hero {
       min-height: 620px;
       display: grid;
-      grid-template-columns: 35% 65%;
+      grid-template-columns: 40% 60%;
       background: var(--dark-blue);
       overflow: hidden;
     }
@@ -136,15 +136,13 @@
     }
 
     .hero-image {
-      width: 520px;
-      height: 520px;
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);
+      margin: 15px;
       background-image: linear-gradient(rgba(18, 59, 115, 0.12), rgba(18, 59, 115, 0.12)), url("oprit.png");
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      background-color: var(--dark-blue);
-      align-self: center;
-      justify-self: center;
       border-radius: 8px;
     }
 
@@ -362,7 +360,7 @@
       padding: 12px 18px;
       border-radius: 6px;
       font-size: 18px;
-      cursir: pointer;
+      cursor: pointer;
     }
     
     @media (max-width: 1000px) {
@@ -407,7 +405,7 @@
 
       .hero-image {
         width: 100%;
-        max-widht: 350px;
+        max-width: 350px;
         height: 300px;
       }
 
@@ -427,7 +425,7 @@
       }
       
       .hero-text h1 {
-        front-size: 32px;
+        font-size: 32px;
       }
 
       .hero-text p,
