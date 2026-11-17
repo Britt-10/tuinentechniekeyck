@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Tuin en Techniek Eyck</title>
+  <meta name="description" content="Bekijk projecten van Tuin en Techniek Eyck. Van tuinwerkzaamheden tot technische oplossingen.">
+
+  <style>
+    :root {
+      --dark-blue: #123B73;
+      --blue: #1E62B3;
+      --light-blue: #EAF3FF;
+      --accent-blue: #7DB7F0;
+      --white: #ffffff;
+      --text: #263445;
+      --grey: #f4f6f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--dark-blue);
+      color: var(--white);
+      padding: 18px 20px;
+    }
+
+    .header-container {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      color: var(--white);
+      font-size: 23px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu a:hover {
+      color: var(--accent-blue);
+    }
+
+    .intro {
+      background: var(--light-blue);
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .intro h1 {
+      color: var(--dark-blue);
+      font-size: 36px;
+      margin: 0 0 15px;
+    }
+
+    .intro p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 45px 20px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .project-frame {
+      background: var(--white);
+      border: 1px solid #dce6f1;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(18, 59, 115, 0.09);
+    }
+
+    .project-title {
+      background: var(--dark-blue);
+      color: var(--white);
+      padding: 15px 18px;
+      margin: 0;
+      font-size: 21px;
+    }
+
+    .project-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      background: var(--light-blue);
+    }
+
+    .project-photo {
+      position: relative;
+      min-width: 0;
+    }
+
+    .project-photo img {
+      display: block;
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .photo-label {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      background: var(--blue);
+      color: var(--white);
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .project-description {
+      padding: 18px;
+    }
+
+    .project-description h3 {
+      color: var(--dark-blue);
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .project-description p {
+      margin: 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--blue);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: var(--white);
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 700px) {
+      .header-container {
+        flex-direction: column;
+      }
+
+      .menu {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .intro h1 {
+        font-size: 29px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-photo img {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-container">
+      <a class="logo" href="index.html">Tuin en Techniek Eyck</a>
+
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#diensten">Diensten</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="index.html#over">Over ons</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="intro">
+    <h1>Ons werk in beeld</h1>
+    <p>
+      Bekijk hieronder een selectie van onze uitgevoerde projecten.
+      Van de situatie vóór de werkzaamheden tot het eindresultaat.
+    </p>
+  </section>
+
+  <main class="container">
+
+    <div class="project-grid">
+
+      <!-- PROJECT 1 -->
+      <article class="project-frame">
+        <h2 class="project-title">Project 1 – Naam van het project</h2>
+
+        <div class="project-photos">
+          <div class="project-photo">
+            <img src="fotos/project1-voor.jpg" alt="Situatie voor project 1">
+            <span class="photo-label">VOOR</span>
+          </div>
+
+          <div class="project-photo">
+            <img src="fotos/project1-na.jpg" alt="Resultaat van project 1">
+            <span class="photo-label">NA</span>
+          </div>
+        </div>
+
+        <div class="project-description">
+          <h3>Van oud naar nieuw</h3>
+          <p>
+            Beschrijf hier kort wat de werkzaamheden waren en wat het
+            uiteindelijke resultaat is geworden.
+          </p>
+        </div>
+      </article>
+
+      <!-- PROJECT 2 -->
+      <article class="project-frame">
+        <h2 class="project-title">Project 2 – Naam van het project</h2>
+
+        <div class="project-photos">
+          <div class="project-photo">
+            <img src="fotos/project2-voor.jpg" alt="Situatie voor project 2">
+            <span class="photo-label">VOOR</span>
+          </div>
+
+          <div class="project-photo">
+            <img src="fotos/project2-na.jpg" alt="Resultaat van project 2">
+            <span class="photo-label">NA</span>
+          </div>
+        </div>
+
+        <div class="project-description">
+          <h3>Het project in het kort</h3>
+          <p>
+            Beschrijf hier welke werkzaamheden zijn uitgevoerd en
+            wat er aan het project is veranderd.
+          </p>
+        </div>
+      </article>
+
+      <!-- PROJECT 3 -->
+      <article class="project-frame">
+        <h2 class="project-title">Project 3 – Naam van het project</h2>
+
+        <div class="project-photos">
+          <div class="project-photo">
+            <img src="fotos/project3-voor.jpg" alt="Situatie voor project 3">
+            <span class="photo-label">VOOR</span>
+          </div>
+
+          <div class="project-photo">
+            <img src="fotos/project3-na.jpg" alt="Resultaat van project 3">
+            <span class="photo-label">NA</span>
+          </div>
+        </div>
+
+        <div class="project-description">
+          <h3>Het eindresultaat</h3>
+          <p>
+            Beschrijf hier kort de uitgevoerde werkzaamheden en
+            het resultaat voor de klant.
+          </p>
+        </div>
+      </article>
+
+      <!-- PROJECT 4 -->
+      <article class="project-frame">
+        <h2 class="project-title">Project 4 – Naam van het project</h2>
+
+        <div class="project-photos">
+          <div class="project-photo">
+            <img src="fotos/project4-voor.jpg" alt="Situatie voor project 4">
+            <span class="photo-label">VOOR</span>
+          </div>
+
+          <div class="project-photo">
+            <img src="fotos/project4-na.jpg" alt="Resultaat van project 4">
+            <span class="photo-label">NA</span>
+          </div>
+        </div>
+
+        <div class="project-description">
+          <h3>Een mooi resultaat</h3>
+          <p>
+            Beschrijf hier kort wat er is gedaan en hoe het project
+            uiteindelijk is opgeleverd.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <a class="back-link" href="index.html">← Terug naar de homepage</a>
+
+  </main>
+
+  <footer>
+    <p>© Tuin en Techniek Eyck – Alle rechten voorbehouden</p>
+  </footer>
+
+</body>
+</html>
